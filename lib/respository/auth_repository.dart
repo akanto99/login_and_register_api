@@ -1,8 +1,4 @@
 
-
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:login_and_register_api/data/network/BaseApiServices.dart';
 import 'package:login_and_register_api/data/network/NetworkApiService.dart';
 import 'package:login_and_register_api/res/app_url.dart';

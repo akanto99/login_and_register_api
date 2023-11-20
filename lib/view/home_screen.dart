@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_register_api/utils/routes/routes_name.dart';
-import 'package:login_and_register_api/view_model/home_view_model.dart';
+// import 'package:login_and_register_api/view_model/home_view_model.dart';
 import 'package:login_and_register_api/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -14,12 +14,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  HomeViewViewModel  homeViewViewModel = HomeViewViewModel();
+  // HomeViewViewModel  homeViewViewModel = HomeViewViewModel();
   
   @override
   void initState() {
     // TODO: implement initState
-    homeViewViewModel.fetchMoviesListApi();
+    // homeViewViewModel.fetchMoviesListApi();
     super.initState();
   }
   

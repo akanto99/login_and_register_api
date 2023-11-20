@@ -41,13 +41,14 @@ class _LoginViewState extends State<LoginView> {
     final authViewMode = Provider.of<AuthViewModel>(context);
 
     final height  = MediaQuery.of(context).size.height * 1 ;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+
+          title: Text('Login'),
+          centerTitle: true,
+        ),
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -71,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
                     controller: _passwordController,
                     obscureText: _obsecurePassword.value,
                     focusNode: passwordFocusNode,
-
+      
                     obscuringCharacter: "*",
                     decoration: InputDecoration(
                       hintText: 'Password',
@@ -87,7 +88,7 @@ class _LoginViewState extends State<LoginView> {
                           )),
                     ),
                   );
-
+      
                 }
             ),
             SizedBox(height: height * .085,),
@@ -96,22 +97,22 @@ class _LoginViewState extends State<LoginView> {
               loading: authViewMode.loading,
               onPress: (){
                 if(_emailController.text.isEmpty){
-
+      
                   Utils.flushBarErrorMessage('Please enter email', context);
                 }else if(_passwordController.text.isEmpty){
                   Utils.flushBarErrorMessage('Please enter password', context);
-
+      
                 }else if(_passwordController.text.length < 6){
                   Utils.flushBarErrorMessage('Please enter 6 digit password', context);
-
+      
                 }else {
-
-
+      
+      
                   Map data = {
                     'email' : _emailController.text.toString(),
                     'password' : _passwordController.text.toString(),
                   };
-
+      
                   authViewMode.loginApi(data , context);
                   print('api hit');
                 }
@@ -123,7 +124,7 @@ class _LoginViewState extends State<LoginView> {
                 Navigator.pushNamed(context, RoutesName.signUp);
               },
                 child: Text("Don't have an accont? Sign Up"))
-
+      
           ],
         ),
       ),
